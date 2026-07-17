@@ -29,7 +29,7 @@ C.	POST-PROCESSING STAGE
     
  LADNER FISCHER PARALLEL PREFIX ADDER 
 The Ladner-Fischer parallel prefix adder optimizes the area for carry propagation and enhances the speed of summation verification. The addition operation in the parallel prefix adder involves three main steps.  
-Although the Ladner-Fischer adder features minimal logic depth, it has a high fanout and includes more robust operator nodes. Its treelike structure [6] facilitates efficient arithmetic operations by requiring fewer ports, which in turn reduces both latency and memory usage in this proposed architecture. 
+Although the Ladner-Fischer adder features minimal logic depth, it has a high fanout and includes more robust operator nodes. Its treelike structure facilitates efficient arithmetic operations by requiring fewer ports, which in turn reduces both latency and memory usage in this proposed architecture. 
 
 16X16 VEDIC MULTIPLIER USING LADNER-FISCHER PARALLEL PREFIX ADDER 
 
