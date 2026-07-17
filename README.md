@@ -1,4 +1,4 @@
-# vedic-multiplier
+# 16x16vedic-multiplier
 Implementation of Area efficient 16x16 Vedic Multiplier using Parallel Prefix Adder in Verilog HDL.
 
 Here's an overview of the key features and functionalities of the implemented circuit:
