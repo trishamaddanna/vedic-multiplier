@@ -35,8 +35,7 @@ Although the Ladner-Fischer adder features minimal logic depth, it has a high fa
 
  The initial step involves grouping the 8 bits from each 16-bit input. The least significant bits (LSBs) of the two inputs generate vertical and crosswise product terms. Each input byte is processed by a separate 8×8 Vedic multiplier, resulting in sixteen partial product rows. 
     
-    These partial product rows are then added using a 16-bit parallel prefix Ladner-Fischer adder to produce the final product bits. The schematic for the 16×16 block is constructed using the 8×8 Vedic multiplier. The
-partial products represent the Urdhva vertical and cross product terms, and the final product is obtained through the use of an OR gate.
+These partial product rows are then added using a 16-bit parallel prefix Ladner-Fischer adder to produce the final product bits. The schematic for the 16×16 block is constructed using the 8×8 Vedic multiplier. The partial products represent the Urdhva vertical and cross product terms, and the final product is obtained through the use of an OR gate.
 
 
      
