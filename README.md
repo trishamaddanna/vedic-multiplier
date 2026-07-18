@@ -56,33 +56,27 @@ Physical implementation summary for the internal 16-bit Ladner-Fischer adder tre
 *   **Number of Bonded IOBs:** 50 ($35\%$ package utilization)
 
 ---
+## 📂 Repository Layout & Project Artifacts
 
-## 📂 Repository Deliverables & Directory Layout
+All structural hardware core files, sub-multiplier cells, modular testbenches, and toolchain evaluation reports are hosted directly within the root directory for direct access:
 
-The complete structural hardware hierarchy, self-checking simulation suites, and synthesis reports are mapped below:
-
-```text
-├── rtl/                        # Hierarchical synthesizable hardware modules
-│   ├── vedic_2_x_2.v           # 2x2-bit fundamental multiplier cell
-│   ├── vedic4x4ppa.v           # 4x4-bit sub-multiplier block
-│   ├── vedic8x8ppa.v           # 8x8-bit intermediate multiplier engine
-│   ├── vedic16x16ppa.v         # Top-level synthesizable 16x16-bit multiplier core
-│   ├── input3_adder.v          # 16-bit Ladner-Fischer parallel-prefix tree
-│   ├── input4b_adder.v         # 4-bit parallel adder component
-│   └── input8b_adder.v         # 8-bit parallel adder component
-├── sim/                        # Functional verification testbenches
-│   ├── vedic4x4ppa_tb.v        # Test suite for 4x4 multiplication verification
-│   ├── vedic8x8ppa_tb.v        # Test suite for 8x8 multiplication verification
-│   └── vedic16x16ppa_tb.v      # Exhaustive top-level system verification testbench
-├── reports/                    # Toolchain synthesis reports (Cadence / Xilinx)
-│   ├── vedic16x16ppa_area.rpt  # Silicon cell area report (1,108.974 µm²)
-│   ├── vedic16x16ppa_power.rpt # Leakage and dynamic power dissipation log (96.13 µW)
-│   ├── vedic16x16ppa_gates.rpt # Explicit gate instance count report (803 total cells)
-│   └── adder_utilization_summary.rpt # 16-bit Ladner-Fischer resource report
-└── docs/                       # Architectural diagrams & timing validations
-    ├── 16x16_block_diagram.jpg # Hierarchical system layout blueprint
-    ├── ladner_fischer_diagram.jpg # Lookahead carry routing tree diagram
-    ├── rtl_schematic.jpg       # Synthesized technology register-transfer mappings
-    ├── synthesis_schematic.jpg # Gate-level standard cell schematic capture
-    └── verification_waveform.jpg # ModelSim/QuestaSim functional timing wave logs
-```
+*   `vedic16x16ppa.v` — Top-level synthesizable 16x16-bit Vedic multiplier core.
+*   `vedic8x8ppa.v` — 8x8-bit intermediate multiplier engine.
+*   `vedic4x4ppa.v` — 4x4-bit sub-multiplier block.
+*   `vedic_2_x_2.v` — 2x2-bit fundamental multiplication cell.
+*   `input3_adder.v` — 16-bit Ladner-Fischer parallel-prefix lookahead tree network.
+*   `input8b_adder.v` — 8-bit parallel lookahead adder module block.
+*   `input4b_adder.v` — 4-bit parallel adder component cell.
+*   `vedic16x16ppa_tb.v` — Exhaustive top-level system verification testbench.
+*   `vedic8x8ppa_tb.v` — Modular simulation suite for intermediate 8x8 block verification.
+*   `vedic4x4ppa_tb.v` — Modular simulation suite for 4x4 block verification.
+*   `vedic16x16ppa_area.rpt` — Production toolchain cell area optimization analysis ($1,108.974\ \mu\text{m}^2$).
+*   `vedic16x16ppa_power.rpt` — Detailed Cadence gate leakage and dynamic power dissipation breakdown ($96.13\ \mu\text{W}$).
+*   `vedic16x16ppa_gates.rpt` — Explicit netlist standard cell instance report confirming exactly 803 logic gates.
+*   `Area Report of 16-bit Ladner-Fischer.txt` — 16-bit parallel-prefix adder FPGA utilization data log.
+*   `16x16blockdiagram.jpg` — Hierarchical multiplication algorithm routing blueprint.
+*   `blockdiag.jpg` — Ladner-Fischer lookahead carry tree logic routing mapping diagram.
+*   `rtl.jpg` — Synthesized technology netlist register-transfer gate mappings layout.
+*   `synthesis.jpg` — Enterprise standard cell area hierarchy placement schematic model.
+*   `waveform.jpg` — Functional timing waves validating data throughput and boundary handshakes.
+*   `README.md` — Main architectural specification and portfolio landing page.
