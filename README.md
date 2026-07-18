@@ -10,11 +10,12 @@ The math processing logic performs vertical and crosswise multiplication, enabli
 *   Each block evaluates internal bits concurrently, shifting structural carry generation away from sequential limits to lower calculation complexity.
   
 ```text
-  Step 1: Vertical       Step 2: Crosswise       Step 3: Vertical
-     a1     a0              a1     a0              a1     a0
+  Step 1: Vertical (LSB)      Step 2: Crosswise         Step 3: Vertical (MSB)
+       a1     a0                  a1     a0                  a1     a0
 
-     |      |                 \   /                |      |
-     b1     b0              b1     b0              b1     b0
+              |                     \   /                    |      
+       b1     b0                  b1     b0                  b1     b0
+
 ```
 
 ### 2. Ladner-Fischer Tree Network
