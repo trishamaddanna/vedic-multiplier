@@ -1,7 +1,8 @@
 # Design of Area-Efficient 16x16 Vedic Multiplier using Parallel Prefix Adder
 
-A high-performance, area-efficient 16x16-bit hardware multiplier architecture implemented in synthesizable Verilog HDL. This design incorporates the ancient Indian mathematical principles of the **Urdhva Tiryagbhyam sutra** alongside a high-speed **Ladner-Fischer Parallel Prefix Adder (PPA)** to dramatically compress critical path propagation delay, dynamic power consumption, and silicon area footprint.
+A high-performance, area-efficient **16x16-bit hardware multiplier** architecture implemented in synthesizable Verilog HDL. This design incorporates the ancient Indian mathematical principles of the **Urdhva Tiryagbhyam sutra** alongside a high-speed **Ladner-Fischer Parallel Prefix Adder (PPA)** to dramatically compress critical path propagation delay, dynamic power consumption, and silicon area footprint.
 
+---
 
 ## 📊 Synthesis & Performance Verification Metrics
 
@@ -28,6 +29,7 @@ Physical implementation summary for the internal 16-bit Ladner-Fischer adder tre
 *   **Number of 4-input LUTs:** 43
 *   **Number of Bonded IOBs:** 50 ($35\%$ package utilization)
 
+---
 
 ## ⚡ Architectural Blueprint & Design Mechanics
 
@@ -67,17 +69,14 @@ b1 b0 b1 b0 b1 b0
 To prevent standard Ripple Carry bottlenecking, a three-stage tree-structured parallel prefix adder updates intermediate values concurrently:
 
 *   **Pre-Processing Stage:** Instantly samples input lines to evaluate isolated group conditions:
-     𝑃𝑠[𝑖] = 𝐴[𝑖] + 𝐵[𝑖]                   (1) 
-     𝐺𝑠[𝑖] = 𝐴[𝑖] · 𝐵[𝑖]                     (2)
-    
+    \[P_s[i] = A[i] \oplus B[i] \quad \text{and} \quad G_s[i] = A[i] \cdot B[i]\]
 *   **Carry Generation Stage:** Resolves concurrent carry pathways through multi-level lookahead tree execution:
-     𝐺𝑠[𝑖: 𝑗] = 𝐺𝑠[𝑖: 𝑘] + (𝑃𝑠[𝑖: 𝑗] . 𝐺𝑠[𝑖: 𝑗])   (3) 
-      𝑃𝑠[𝑖: 𝑗] = 𝑃𝑠[𝑖: 𝑗] . 𝑃𝑠[𝑖: 𝑘]                      (4) 
- 
+    \[G_s[i:j] = G_s[i:k] + (P_s[i:k] \cdot G_s[k-1:j])\]
+    \[P_s[i:j] = P_s[i:k] \cdot P_s[k-1:j]\]
 *   **Post-Processing Stage:** Combines computed parallel prefix bits via localized gates to extract finalized product metrics:
-    𝑆𝑢𝑚 = 𝐴 𝑋𝑂𝑅 𝐵 𝑋𝑂𝑅 𝐶[𝑖 − 1]              (5) 
-    𝐶 [𝑖 − 1] = 𝐺𝑠 [𝑖1]                                   (6) 
+    \[\text{Sum}[i] = A[i] \oplus B[i] \oplus C[i-1]\]
 
+---
 
 ## 📂 Repository Deliverables
 
@@ -96,8 +95,14 @@ The code, schematics, and simulation configurations inside this repository match
     ├── rtl_schematic.png      # Xilinx synthesis technology schematics
     ├── simulation_waves.png   # Functional verification testbench wave logs
     └── synthesis_schematic.png# Cadence 3D cell placement layouts
+```
 
+---
 
 ## 📜 Citation & Publication Details
 This architectural design is published and detailed in the following paper:
 *   **Trisha Maddanna**, et al., *"Design of Area Efficient Vedic Multiplier using Parallel Prefix Adder,"* **Tuijin Jishu / Journal of Propulsion Technology**, Vol. 45, No. 4, 2024.
+
+
+
+
