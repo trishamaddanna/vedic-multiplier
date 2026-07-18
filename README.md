@@ -4,6 +4,7 @@ A high-performance, area-efficient **16x16-bit hardware multiplier** architectur
 
 ---
 
+
 ## 📊 Synthesis & Performance Verification Metrics
 
 The complete architecture was modeled using Verilog HDL and verified utilizing **Xilinx 14.7** and **Cadence Design Tools**. Gate-level netlist mapping confirms significant efficiency gains over conventional architectures:
