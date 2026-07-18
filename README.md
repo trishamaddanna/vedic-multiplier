@@ -74,13 +74,7 @@ The code, schematics, and simulation configurations inside this repository match
     ├── rtl_schematic.png      # Xilinx synthesis technology schematics
     ├── simulation_waves.png   # Functional verification testbench wave logs
     └── synthesis_schematic.png# Cadence 3D cell placement layouts
-```
 
----
-
-## 📜 Citation & Publication Details
-This architectural design is published and detailed in the following paper:
-*   **Trisha Maddanna**, et al., *"Design of Area Efficient Vedic Multiplier using Parallel Prefix Adder,"* **Tuijin Jishu / Journal of Propulsion Technology**, Vol. 45, No. 4, 2024.
 
 
 
