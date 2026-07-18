@@ -69,12 +69,15 @@ b1 b0 b1 b0 b1 b0
 To prevent standard Ripple Carry bottlenecking, a three-stage tree-structured parallel prefix adder updates intermediate values concurrently:
 
 *   **Pre-Processing Stage:** Instantly samples input lines to evaluate isolated group conditions:
-    \[P_s[i] = A[i] \oplus B[i] \quad \text{and} \quad G_s[i] = A[i] \cdot B[i]\]
+     𝑃𝑠[𝑖] = 𝐴[𝑖] + 𝐵[𝑖]                     (1)  
+     𝐺𝑠[𝑖] = 𝐴[𝑖] · 𝐵[𝑖]                     (2) 
 *   **Carry Generation Stage:** Resolves concurrent carry pathways through multi-level lookahead tree execution:
-    \[G_s[i:j] = G_s[i:k] + (P_s[i:k] \cdot G_s[k-1:j])\]
-    \[P_s[i:j] = P_s[i:k] \cdot P_s[k-1:j]\]
+    𝐺𝑠[𝑖: 𝑗] = 𝐺𝑠[𝑖: 𝑘] + (𝑃𝑠[𝑖: 𝑗] . 𝐺𝑠[𝑖: 𝑗])  (3)
+    𝑃𝑠[𝑖: 𝑗] = 𝑃𝑠[𝑖: 𝑗] . 𝑃𝑠[𝑖: 𝑘]              (4)  
 *   **Post-Processing Stage:** Combines computed parallel prefix bits via localized gates to extract finalized product metrics:
-    \[\text{Sum}[i] = A[i] \oplus B[i] \oplus C[i-1]\]
+    𝑆𝑢𝑚 = 𝐴 𝑋𝑂𝑅 𝐵 𝑋𝑂𝑅 𝐶[𝑖 − 1]              (5)  
+    𝐶 [𝑖 − 1] = 𝐺𝑠 [𝑖1]                       (6)  
+
 
 ---
 
