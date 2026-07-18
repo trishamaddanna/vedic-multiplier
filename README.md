@@ -22,7 +22,7 @@ The math processing logic performs vertical and crosswise multiplication, enabli
 To prevent standard Ripple Carry bottlenecking, a three-stage tree-structured parallel prefix adder updates intermediate values concurrently:
 
 *   **Pre-Processing Stage:** Instantly samples input lines to evaluate isolated group conditions:
-     𝑃𝑠[𝑖] = 𝐴[𝑖] + 𝐵[𝑖]                     (1)  
+      $$P_s[i] = A[i] \oplus B[i]$$
      𝐺𝑠[𝑖] = 𝐴[𝑖] · 𝐵[𝑖]                     (2) 
 *   **Carry Generation Stage:** Resolves concurrent carry pathways through multi-level lookahead tree execution:
     𝐺𝑠[𝑖: 𝑗] = 𝐺𝑠[𝑖: 𝑘] + (𝑃𝑠[𝑖: 𝑗] . 𝐺𝑠[𝑖: 𝑗])  (3)
