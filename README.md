@@ -43,6 +43,7 @@ The math processing logic performs vertical and crosswise multiplication, enabli
 A high-performance, area-efficient **16x16-bit hardware multiplier** architecture implemented in synthesizable Verilog HDL. This design incorporates the ancient Indian mathematical principles of the **Urdhva Tiryagbhyam sutra** alongside a high-speed **Ladner-Fischer Parallel Prefix Adder (PPA)** to dramatically compress critical path propagation delay, dynamic power consumption, and silicon area footprint.
 
  📊 Synthesis & Performance Verification Metrics
+ 
 The complete architecture was modeled using Verilog HDL and verified utilizing **Xilinx 14.7** and **Cadence Design Tools**. Gate-level netlist mapping confirms significant efficiency gains over conventional architectures:
 ### 1. Chip Area & Power Breakdown (Cadence Genus)Compared to a standard 16-bit Vedic multiplication block, this optimized parallel-prefix approach delivers massive hardware reduction:
 
