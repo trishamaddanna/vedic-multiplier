@@ -57,24 +57,32 @@ Physical implementation summary for the internal 16-bit Ladner-Fischer adder tre
 
 ---
 
-## 📂 Repository Deliverables
+## 📂 Repository Deliverables & Directory Layout
 
-The code, schematics, and simulation configurations inside this repository match standard corporate tape-out files:
+The complete structural hardware hierarchy, self-checking simulation suites, and synthesis reports are mapped below:
 
 ```text
-├── rtl/               # Clean, synthesizable Verilog source modules
-│   ├── vedic_16x16ppa.v       # Top-level multiplier entity
-│   ├── parallel_prefix_add16.v # 16-bit Ladner-Fischer adder core
-│   └── multipliers_8x8_4x4.v  # Hierarchical multiplier building blocks
-├── syn/               # Production synthesis data generated via Cadence Genus
-│   ├── area_report.txt        # Cell area and netlist mapping data
-│   ├── power_report.txt       # Dynamic switching, dynamic internal, and static leakage breakdowns
-│   └── gate_count_report.txt  # Gate instance enumeration (803 total cells)
-└── docs/              # Visual design validations and references
-    ├── rtl_schematic.png      # Xilinx synthesis technology schematics
-    ├── simulation_waves.png   # Functional verification testbench wave logs
-    └── synthesis_schematic.png# Cadence 3D cell placement layouts
-
-
-
-
+├── rtl/                        # Hierarchical synthesizable hardware modules
+│   ├── vedic_2_x_2.v           # 2x2-bit fundamental multiplier cell
+│   ├── vedic4x4ppa.v           # 4x4-bit sub-multiplier block
+│   ├── vedic8x8ppa.v           # 8x8-bit intermediate multiplier engine
+│   ├── vedic16x16ppa.v         # Top-level synthesizable 16x16-bit multiplier core
+│   ├── input3_adder.v          # 16-bit Ladner-Fischer parallel-prefix tree
+│   ├── input4b_adder.v         # 4-bit parallel adder component
+│   └── input8b_adder.v         # 8-bit parallel adder component
+├── sim/                        # Functional verification testbenches
+│   ├── vedic4x4ppa_tb.v        # Test suite for 4x4 multiplication verification
+│   ├── vedic8x8ppa_tb.v        # Test suite for 8x8 multiplication verification
+│   └── vedic16x16ppa_tb.v      # Exhaustive top-level system verification testbench
+├── reports/                    # Toolchain synthesis reports (Cadence / Xilinx)
+│   ├── vedic16x16ppa_area.rpt  # Silicon cell area report (1,108.974 µm²)
+│   ├── vedic16x16ppa_power.rpt # Leakage and dynamic power dissipation log (96.13 µW)
+│   ├── vedic16x16ppa_gates.rpt # Explicit gate instance count report (803 total cells)
+│   └── adder_utilization_summary.rpt # 16-bit Ladner-Fischer resource report
+└── docs/                       # Architectural diagrams & timing validations
+    ├── 16x16_block_diagram.jpg # Hierarchical system layout blueprint
+    ├── ladner_fischer_diagram.jpg # Lookahead carry routing tree diagram
+    ├── rtl_schematic.jpg       # Synthesized technology register-transfer mappings
+    ├── synthesis_schematic.jpg # Gate-level standard cell schematic capture
+    └── verification_waveform.jpg # ModelSim/QuestaSim functional timing wave logs
+```
