@@ -22,13 +22,13 @@ The math processing logic performs vertical and crosswise multiplication, enabli
 To prevent standard Ripple Carry bottlenecking, a three-stage tree-structured parallel prefix adder updates intermediate values concurrently:
 
 *   **Pre-Processing Stage:** Instantly samples input lines to evaluate isolated group conditions:
-    $$P_s[i] = A[i] \oplus B[i]$$
+    $$P_s[i] = A[i] \oplus B[i]$$ ;
     $$G_s[i] = A[i] \cdot B[i]$$
 *   **Carry Generation Stage:** Resolves concurrent carry pathways through multi-level lookahead tree execution:
-    $$G_s[i:j] = G_s[i:k] + (P_s[i:j] \cdot G_s[i:j])$$
+    $$G_s[i:j] = G_s[i:k] + (P_s[i:j] \cdot G_s[i:j])$$ ;
     $$P_s[i:j] = P_s[i:j] \cdot P_s[i:k]$$ 
 *   **Post-Processing Stage:** Combines computed parallel prefix bits via localized gates to extract finalized product metrics:
-    $$\text{Sum} = A \oplus B \oplus C[i-1]$$
+    $$\text{Sum} = A \oplus B \oplus C[i-1]$$ ;
     $$C[i-1] = G_s[i1]$$ 
 
 # Design of Area-Efficient 16x16 Vedic Multiplier using Parallel Prefix Adder
