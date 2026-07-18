@@ -9,10 +9,13 @@ The math processing logic performs vertical and crosswise multiplication, enabli
 *   The 16x16-bit block splits into an optimized structure composed of four parallel 8x8-bit sub-modules.
 *   Each block evaluates internal bits concurrently, shifting structural carry generation away from sequential limits to lower calculation complexity.
   
-Step 1: Vertical Step 2: Crosswise Step 3: Vertical
-a1 a0 a1 a0 a1 a0
-| | \ / | |
-b1 b0 b1 b0 b1 b0
+```text
+  Step 1: Vertical       Step 2: Crosswise       Step 3: Vertical
+     a1     a0              a1     a0              a1     a0
+
+     |      |                 \   /                |      |
+     b1     b0              b1     b0              b1     b0
+```
 
 ### 2. Ladner-Fischer Tree Network
 To prevent standard Ripple Carry bottlenecking, a three-stage tree-structured parallel prefix adder updates intermediate values concurrently:
@@ -80,3 +83,10 @@ All structural hardware core files, sub-multiplier cells, modular testbenches, a
 *   `synthesis.jpg` — Enterprise standard cell area hierarchy placement schematic model.
 *   `waveform.jpg` — Functional timing waves validating data throughput and boundary handshakes.
 *   `README.md` — Main architectural specification and portfolio landing page.
+
+---
+
+## 📜 Citation & Publication Details
+This multiplier architecture and performance verification data are published and detailed in the following paper:
+*   Dr Vidyasaraswathi H N, **Trisha Maddanna**, Vaishnavi U, Vidhushi Agrawal, Saurabh Singh, *"Design of Area Efficient Vedic Multiplier using Parallel Prefix Adder,"* **Tuijin Jishu / Journal of Propulsion Technology**, Vol. 45, No. 4, 2024.
+
