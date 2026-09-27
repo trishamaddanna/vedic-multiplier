@@ -60,6 +60,17 @@ Physical implementation summary for the internal 16-bit Ladner-Fischer adder tre
 *   **Number of Bonded IOBs:** 50 ($35\%$ package utilization)
 
 ---
+
+## 🛠️ Toolchain Infrastructure & Synthesis Environment
+
+Conducted cross-toolchain synthesis and verification using industry-standard electronic design automation (EDA) tools to validate architectural savings:
+
+*   **ASIC Logic Synthesis:** Performed using **Cadence Genus Synthesis Solution**. Physical netlist extraction mapped to production cell libraries demonstrates a **76.13% reduction in silicon area** (\(1,108.974\ \mu\text{m}^2\)) and a **67.95% reduction in total power consumption** (\(96.13\ \mu\text{W}\)) compared to baseline architectures.
+*   **FPGA Implementation & Prototyping:** Modeled and structurally verified using **Xilinx ISE 14.7** and **Vivado** suites, targeting an optimized **Xilinx Spartan-6** device package layout.
+*   **Functional Timing Verification:** Functional simulation suites and verification waveforms were evaluated to validate boundary handshakes and ensure zero data truncation during peak throughput operations.
+
+---
+
 ## 📂 Repository Layout & Project Artifacts
 
 All structural hardware core files, sub-multiplier cells, modular testbenches, and toolchain evaluation reports are hosted directly within the root directory for direct access:
