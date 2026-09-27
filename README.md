@@ -65,9 +65,9 @@ Physical implementation summary for the internal 16-bit Ladner-Fischer adder tre
 
 Conducted cross-toolchain synthesis and verification using industry-standard electronic design automation (EDA) tools to validate architectural savings:
 
-*   **ASIC Logic Synthesis:** Performed using **Cadence Genus Synthesis Solution**. Physical netlist mapping confirms a **76.13% reduction in silicon area** down to **1,108.974 µm²** and a **67.95% reduction in total power consumption** down to **96.13 µW** (10.38 µW leakage, 42.56 µW internal, 43.19 µW dynamic switching) compared to baseline configurations.
-*   **FPGA Implementation & Prototyping:** Modeled, placed, and structurally verified using **Xilinx ISE 14.7** and **Vivado** suites, targeting an optimized **Xilinx Spartan-6** device package layout (23 Slices, 43 LUTs, and 50 Bonded IOBs).
-*   **Functional Timing Verification:** Functional simulation testbenches were evaluated to check boundary hardware handshakes, validating a maximum critical path propagation delay of **13.822 ns** with zero data truncation.
+*   **ASIC Logic Synthesis:** Performed using **Cadence Genus Synthesis Solution**. Physical netlist extraction mapped to production cell libraries demonstrates a **76.13% reduction in silicon area** down to **1,108.974 µm²** and a **67.95% reduction in total power consumption** down to **96.13 µW** (10.38 µW leakage, 42.56 µW internal, 43.19 µW dynamic switching) compared to baseline architectures.
+*   **FPGA Implementation & Prototyping:** Modeled and structurally verified using **Xilinx ISE 14.7** and **Vivado** suites, targeting an optimized **Xilinx Spartan-6** device package layout.
+*   **Functional Timing Verification:** Functional simulation suites and verification waveforms were evaluated to validate boundary handshakes and ensure zero data truncation during peak throughput operations.
 
 ---
 
