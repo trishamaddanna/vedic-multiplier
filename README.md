@@ -88,7 +88,7 @@ All structural hardware core files, sub-multiplier cells, modular testbenches, a
 *   `vedic16x16ppa_area.rpt` — Production toolchain cell area optimization analysis ($1,108.974\ \mu\text{m}^2$).
 *   `vedic16x16ppa_power.rpt` — Detailed Cadence gate leakage and dynamic power dissipation breakdown ($96.13\ \mu\text{W}$).
 *   `vedic16x16ppa_gates.rpt` — Explicit netlist standard cell instance report confirming exactly 803 logic gates.
-*   `Area Report of 16-bit Ladner-Fischer.txt` — 16-bit parallel-prefix adder FPGA utilization data log.
+*   `Area Report of 16-bit Ladner-Fischer.jpg` — 16-bit parallel-prefix adder FPGA utilization data log.
 *   `16x16blockdiagram.jpg` — Hierarchical multiplication algorithm routing blueprint.
 *   `blockdiag.jpg` — Ladner-Fischer lookahead carry tree logic routing mapping diagram.
 *   `rtl.jpg` — Synthesized technology netlist register-transfer gate mappings layout.
